@@ -4,7 +4,7 @@ import "./Person.scss";
 const Person = props => {
   const [state, setState] = useState({
     species: ["fetching species.."],
-    films: ["fetching films... "]
+    films: []
   });
 
   useEffect(() => {
@@ -32,21 +32,33 @@ const Person = props => {
     fetchData();
   }, [props]);
 
+  const imageStyle = {
+    backgroundImage: `url(${props.image})`,
+    backgroundSize: "cover",
+    height: "300px",
+    width: "100%",
+    backgroundPosition: "100%"
+  };
+
   return (
     <div className="person">
-      <img className="character-image" src={props.image} alt={props.name} />
+      <div style={imageStyle}></div>
       <h1 className="character-name">{props.name}</h1>
       <p className="character-species">{state.species}</p>
       <div className="titles">
         <p>Titles Featured In:</p>
-        {state.films.map((film, i) => {
-          return (
-            <li key={i} className="character-titles">
-              <span>Episode: {film.episode_id}</span>
-              {film.title}
-            </li>
-          );
-        })}
+        {state.films.length === 0 ? (
+          <p>Fetching films ...</p>
+        ) : (
+          state.films.map((film, i) => {
+            return (
+              <li key={i} className="character-titles">
+                <span>Episode: {film.episode_id}</span>
+                {film.title}
+              </li>
+            );
+          })
+        )}
       </div>
     </div>
   );

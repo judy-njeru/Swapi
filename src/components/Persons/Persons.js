@@ -7,7 +7,7 @@ const Persons = props => {
   const imagesData = props.images.images;
 
   const person = personsData.map((person, i) => {
-    Object.assign(person, { image: imagesData[i].url });
+    Object.assign(person, { image: imagesData[i] });
 
     return (
       <Person

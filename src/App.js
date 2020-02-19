@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   const getPersons = async () => {
-    let apiResponse = await fetch("https://swapi.co/api/people");
+    let apiResponse = await fetch("https://swapi.co/api/people/");
     let fetchedPersonsData = await apiResponse.json();
     let personsData = await fetchedPersonsData.results;
 
@@ -28,10 +28,10 @@ function App() {
 
   const getImages = async () => {
     let apiResponse = await fetch(
-      "http://www.splashbase.co/api/v1/images/latest"
+      "https://dog.ceo/api/breed/hound/afghan/images/random/10"
     );
     let fetchedImagesData = await apiResponse.json();
-    const imagesData = fetchedImagesData.images;
+    const imagesData = fetchedImagesData.message;
 
     setImagesState({
       images: imagesData
@@ -40,10 +40,10 @@ function App() {
 
   let persons = null;
 
-  if (imagesState.images.length === 0) {
+  if (personsState.persons.length === 0) {
     return (
       <div id="loader-wrapper">
-        <h3>Loading Characters...</h3>
+        <h3>Loading Data...</h3>
         <div className="loader"></div>
       </div>
     );

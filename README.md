@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 # Swapi
 
 Displaying data from the swapi Star Wars API
@@ -70,3 +72,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
+# SwapiLiveSite
+Live Site for the SWAPI Application
+>>>>>>> 6d0d0e87a5fb6d3b4113f930a51bf50116d8c917
+=======
+# SwapiLiveSite
+Live Site for the SWAPI Application
+>>>>>>> 1c0b46e34f4f927e8600a114291ea7463d97a57a
